@@ -1,0 +1,36 @@
+{
+  "name": "shopify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require babel-register",
+    "build": "babel lib -d dist",
+    "serve": "node dist/index.js",
+    "start": "nodemon lib/index.js --exec babel-node"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "lodash": "^4.17.4",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "shopify-api-node": "^2.9.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-airbnb": "^2.4.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.1"
+  }
+}
