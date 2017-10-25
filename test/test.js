@@ -3,6 +3,7 @@
 import { expect } from 'chai';
 import crypto from 'crypto';
 import rp from 'request-promise';
+import app from '../lib/app';
 require('dotenv').config();
 
 const { API_SECRET, APP_URL } = process.env;
@@ -16,6 +17,15 @@ describe('Array', () => {
 });
 
 describe('Security', () => {
+  let server;
+
+  beforeEach(function (done) {
+    server = app.listen(3000, function () {
+      console.log('listened');
+      done();
+    });
+  });
+
   describe('Hmac Validation', () => {
     it('should be equal to hmac received', function (done) {
       const code = '0907a61c0c8d55e99db179b68161bc00';
@@ -28,5 +38,9 @@ describe('Security', () => {
         done();
       }).catch(err => done(err));
     });
+  });
+
+  afterEach(function () {
+    server.close();
   });
 });
