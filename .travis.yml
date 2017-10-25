@@ -3,4 +3,4 @@ node_js:
  - "node"
 dist: trusty
 before_script: npm start
-before_script: npm test
+script: npm test
