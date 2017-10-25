@@ -32,7 +32,7 @@ describe('Security', () => {
       const shop = 'some-shop.myshopify.com';
       const timestamp = '1337178173';
       const hmacDigest = crypto.createHmac('sha256', API_SECRET).update('code=0907a61c0c8d55e99db179b68161bc00&shop=some-shop.myshopify.com&timestamp=1337178173').digest('hex');
-      const requestUrl = `https://${APP_URL}/osangy/auth?hmac=${hmacDigest}&shop=${shop}&code=${code}&timestamp=${timestamp}`;
+      const requestUrl = `http://${APP_URL}/osangy/auth?hmac=${hmacDigest}&shop=${shop}&code=${code}&timestamp=${timestamp}`;
 
       rp(requestUrl).then(() => {
         done();
